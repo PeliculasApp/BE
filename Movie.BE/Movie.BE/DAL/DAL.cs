@@ -1,11 +1,12 @@
-﻿using Movie.BE.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿///Developer: Eduardo Gonzalez
+///CreateDate: 19/08/2020
+using Movie.BE.Models;
 
 namespace Movie.BE.DAL
 {
+    /// <summary>
+    /// Dal
+    /// </summary>
     internal class DAL
     {
         internal  MoviesContext _db;

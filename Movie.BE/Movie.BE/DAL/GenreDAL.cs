@@ -1,14 +1,21 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿///Developer: Eduardo Gonzalez
+///CreateDate: 19/08/2020
+using Microsoft.EntityFrameworkCore;
 using Movie.BE.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Movie.BE.DAL
 {
+    /// <summary>
+    /// Genero dal
+    /// </summary>
     internal class GenreDAL : DAL
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         internal GenreDAL(MoviesContext db)
         {
             _db = db;
@@ -16,16 +23,14 @@ namespace Movie.BE.DAL
         /// <summary>
         /// Obtiene todos los generos
         /// </summary>
-        internal async Task<List<Models.Genre>> Get()
+        internal async Task<List<GenreModel>> Get()
         {
-            return await (from g in _db.Genres
-                          select g).ToListAsync();
-        }
-        internal List<Genre> GetGenreByIdMovie(int idMovie)
-        {
-            return (from g in _db.Genres
-                    join mg in _db.MovieGenres on g.Id equals mg.IdMovie
-                    select g).ToList();
+            return await (from g in _db.Genre
+                          select new GenreModel
+                          { 
+                            Id = g.Id,
+                            Name = g.Name
+                          }).ToListAsync();
         }
     }
 }

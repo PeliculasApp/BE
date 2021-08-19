@@ -7765,7 +7765,6 @@ INSERT INTO Actor (Id, Name, Background) VALUES(1244721,'Shinji Kawada','/ofpHK6
 INSERT INTO Actor (Id, Name, Background) VALUES(1251546,'Katsuhiko Kawamoto','/AtjxBjBgEASkQTwgKZjpMS3wqY0.jpg');
 INSERT INTO Actor (Id, Name, Background) VALUES(552683,'Hochu Otsuka','/ouMRSpccmkS6iOMVkSc4fEOBiN2.jpg');
 INSERT INTO Actor (Id, Name, Background) VALUES(111373,'Takaya Hashi','/96Phj9Wa0PIBgCB6MATTShfxMp3.jpg');
-INSERT INTO Actor (Id, Name, Background) VALUES(224462,'Naoya Uchida','/2aB95HGK0lLhNMfpQ0jo9zFwLtM.jpg');
 INSERT INTO Actor (Id, Name, Background) VALUES(90571,'Toshihiko Seki','/esu8zw5fb3f7IAyQ2CDVfypbB2U.jpg');
 INSERT INTO Actor (Id, Name, Background) VALUES(114906,'Ryoka Yuzuki','/rizvCqUDzg6ArDBXt6Dv1eS9tIG.jpg');
 INSERT INTO Actor (Id, Name, Background) VALUES(1221143,'Nobuo Tobita','/rmghX9dlaATeebKkTNhtAmWGNuG.jpg');

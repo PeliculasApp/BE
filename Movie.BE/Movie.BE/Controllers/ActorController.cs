@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿///Developer: Eduardo Gonzalez
+///CreateDate: 19/08/2020
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Movie.BE.DAL;
 using Movie.BE.Models;
@@ -9,12 +11,20 @@ using System.Threading.Tasks;
 
 namespace Movie.BE.Controllers
 {
+    /// <summary>
+    /// Actor controller
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class ActorController : ControllerBase
     {
-        private readonly MoviesContext _db;
+        /// <summary>
+        /// Actor dal
+        /// </summary>
         private readonly ActorDAL _dal;
+        /// <summary>
+        /// Contructor
+        /// </summary>
         public ActorController(MoviesContext db)
         {
             _dal = new ActorDAL(db);
@@ -26,6 +36,15 @@ namespace Movie.BE.Controllers
         public async Task<IActionResult> GetActorsByIdMovie(int idMovie)
         {
             var items = await _dal.GetActorsByIdMovie(idMovie);
+            return Ok(items);
+        }
+        /// <summary>
+        /// Obtiene actores con el nombre
+        /// </summary>
+        [HttpGet("{name}")]
+        public async Task<IActionResult> GetActorByName(string name)
+        {
+            var items = await _dal.GetActorByName(name);
             return Ok(items);
         }
     }

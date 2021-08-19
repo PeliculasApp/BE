@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿///Developer: Eduardo Gonzalez
+///CreateDate: 19/08/2020
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Movie.BE.DAL;
 using Movie.BE.Models;
 using System;
 using System.Collections.Generic;
@@ -15,13 +18,16 @@ namespace Movie.BE.Controllers
     [Route("[controller]")]
     public class GenreController : ControllerBase
     {
-        private readonly MoviesContext _db;
+        /// <summary>
+        /// Genero dal
+        /// </summary>
+        private readonly GenreDAL _dal;
         /// <summary>
         /// Constructor
         /// </summary>
         public GenreController(MoviesContext db)
         {
-            _db = db;
+            _dal = new GenreDAL(db);
         }
         /// <summary>
         /// Obtiene todos los generos
@@ -29,13 +35,7 @@ namespace Movie.BE.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            object result = null;
-            using (MoviesContext context = new MoviesContext())
-            {
-                result = await (from ge in context.Genres
-                             select ge).ToListAsync();
-            }
-                
+            List<GenreModel> result = await _dal.Get();
             return Ok(result);
         }
     }
