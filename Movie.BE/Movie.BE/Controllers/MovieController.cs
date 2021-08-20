@@ -43,5 +43,15 @@ namespace Movie.BE.Controllers
             var items = await _dal.GetMoviesByTitle(title);
             return Ok(items);
         }
+        /// <summary>
+        /// Obtiene la pelicula por id
+        /// </summary>
+        [HttpGet("{idMovie}")]
+        public async Task<IActionResult> GetMovieByIdMovie(int idMovie)
+        {
+            var items = await _dal.GetMovieByIdMovie(idMovie);
+            return Ok(items);
+        }
+        
     }
 }

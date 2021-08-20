@@ -46,6 +46,30 @@ namespace Movie.BE.DAL
                 return items;
             }
         }
+        /// <summary>
+        /// Obtiene la pelicula por id
+        /// </summary>
+        internal async Task<MovieModel> GetMovieByIdMovie(int idMovie)
+        {
+            using (_db)
+            {
+                var items = await (from mo in _db.Movie
+                                   where mo.Id == idMovie
+                                   orderby mo.Name descending
+                                   select new Models.MovieModel
+                                   {
+                                       Id = mo.Id,
+                                       Name = mo.Name,
+                                       Description = mo.Description,
+                                       Background = mo.Background
+                                   }).ToListAsync();
+                // Obtiene los generos de la pelicula
+                GetGenresByMovie(ref items);
+                // Obtiene los actores de la pelicula
+                GetActorByMovie(ref items);
+                return items.FirstOrDefault();
+            }
+        }
         ///// <summary>
         ///// Busca peliculas por actor
         ///// </summary>
