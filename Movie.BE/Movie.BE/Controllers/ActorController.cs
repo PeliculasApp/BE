@@ -27,11 +27,6 @@ namespace Movie.BE.Controllers
         public ActorController(MoviesContext db)
         {
             _dal = new ActorDAL(db);
-            // DEV
-            if (true)
-            {
-                // HOLA
-            }
         }
         /// <summary>
         /// Obtiene todos los actores de la pelicula
@@ -50,10 +45,6 @@ namespace Movie.BE.Controllers
         {
             var items = await _dal.GetActorByName(name);
             return Ok(items);
-        }
-        public void test()
-        {
-
         }
     }
 }
