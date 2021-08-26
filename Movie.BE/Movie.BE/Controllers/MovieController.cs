@@ -16,7 +16,7 @@ namespace Movie.BE.Controllers
         /// <summary>
         /// Peliculas dal
         /// </summary>
-        private readonly MovieDAL _dal;
+        private readonly MovieDAL _dal; 
         /// <summary>
         /// Constructor
         /// </summary>
