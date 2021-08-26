@@ -48,7 +48,7 @@ namespace Movie.BE.Controllers
         /// </summary>
         [HttpGet("{idMovie}")]
         public async Task<IActionResult> GetMovieByIdMovie(int idMovie)
-        {
+         {
             var items = await _dal.GetMovieByIdMovie(idMovie);
             return Ok(items);
         }
