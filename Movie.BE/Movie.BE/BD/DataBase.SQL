@@ -4,6 +4,8 @@
 --   tipo:      SQL Server 2012
 
 
+CREATE DATABASE Movies
+USING Movies
 
 CREATE TABLE Actor 
     (
