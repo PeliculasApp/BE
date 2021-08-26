@@ -46,5 +46,9 @@ namespace Movie.BE.Controllers
             var items = await _dal.GetActorByName(name);
             return Ok(items);
         }
+        public void test()
+        {
+
+        }
     }
 }
