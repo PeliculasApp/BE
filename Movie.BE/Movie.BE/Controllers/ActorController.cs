@@ -27,7 +27,7 @@ namespace Movie.BE.Controllers
         public ActorController(MoviesContext db)
         {
             _dal = new ActorDAL(db);
-            // RAMA QA
+            // DEV
         }
         /// <summary>
         /// Obtiene todos los actores de la pelicula
