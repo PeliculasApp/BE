@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Movie.BE.DAL;
 using Movie.BE.Models;
 using System.Threading.Tasks;
-namespace Movie.BE.Controllers
+namespace Movie.BE.Controllers 
 {
     /// <summary>
     /// Peliculas controller
