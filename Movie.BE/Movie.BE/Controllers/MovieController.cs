@@ -22,13 +22,13 @@ namespace Movie.BE.Controllers
         /// </summary>
         public MovieController(MoviesContext db)
         {
-            _dal = new MovieDAL(db);
+            _dal = new MovieDAL(db); 
         }
         /// <summary>
         /// Obtienes las peliculas por el actor
         /// </summary>
         [HttpGet("{idActor}/Actor")]
-        public async Task<IActionResult> GetMoviesByIdActor(int idActor)
+        public async Task<IActionResult> GetMoviesByIdActor(int idActor) 
         {
             var items = await _dal.GetMoviesByIdActor(idActor);
             return Ok(items);
