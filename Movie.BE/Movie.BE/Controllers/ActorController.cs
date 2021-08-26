@@ -28,6 +28,10 @@ namespace Movie.BE.Controllers
         {
             _dal = new ActorDAL(db);
             // DEV
+            if (true)
+            {
+                // HOLA
+            }
         }
         /// <summary>
         /// Obtiene todos los actores de la pelicula
